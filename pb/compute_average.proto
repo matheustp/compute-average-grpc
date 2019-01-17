@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package compute_average;
+
+option go_package="cavgpb";
+
+message ComputeAverageRequest {
+    int32 num = 1;
+}
+
+message ComputeAverageResponse {
+    float result =1;
+}
+
+service ComputeAverageService {
+    rpc ComputeAverage(stream ComputeAverageRequest) returns (ComputeAverageResponse) {};
+}
